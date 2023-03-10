@@ -35,7 +35,8 @@ def get_info(url):
     # title
     title = soup.find(
         "h1",
-        class_="el-5057316460e77b3c5e9fe ss-element gusta-post-title show-show ani-fade").text
+        class_="el-5057316460e77b3c5e9fe ss-element gusta-post-title show-show ani-fade",
+    ).text
 
     # description
     des_divs = soup.find_all("div", class_="wpb_text_column wpb_content_element")
@@ -115,6 +116,6 @@ def main():
     time.sleep(30)
     get_all_info()
 
+
 if __name__ == "__main__":
     main()
-

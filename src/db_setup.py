@@ -12,9 +12,8 @@ c.execute(
 
 c.execute(
     """CREATE TABLE PODCAST_DETAILS
-                (id integer primary key, title text, description text, transcript text, link text)"""   
+                (id integer primary key, title text, description text, transcript text, link text)"""
 )
 
 conn.commit()
 conn.close()
-
