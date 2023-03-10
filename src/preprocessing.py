@@ -86,7 +86,5 @@ def divide_transcript(transcript):
 df["filtered_transcript"] = df["transcript"].apply(preprocess_transcript)
 df["transcript_chuncks"] = df["filtered_transcript"].apply(divide_transcript)
 
-print(df["transcript_chuncks"][0][0])
-
 # save the dataframe to a pickle file
-#df.to_pickle('data/podcast_preprocessed.pkl')
+df.to_pickle("data/podcast_preprocessed.pkl")
