@@ -72,6 +72,13 @@ def divide_transcript(transcript):
             chunck = [sentence]
             chunck_length = sentence_length
     chuncks.append(chunck)
+
+    # Remove empty chuncks
+    chuncks = [chunck for chunck in chuncks if chunck != []]
+
+    # concatenate the content of each chunck into a single string
+    chuncks = [" ".join(chunck) for chunck in chuncks]
+
     return chuncks
 
 
@@ -79,5 +86,7 @@ def divide_transcript(transcript):
 df["filtered_transcript"] = df["transcript"].apply(preprocess_transcript)
 df["transcript_chuncks"] = df["filtered_transcript"].apply(divide_transcript)
 
+print(df["transcript_chuncks"][0][0])
+
 # save the dataframe to a pickle file
-df.to_pickle('data/podcast_preprocessed.pkl')
+#df.to_pickle('data/podcast_preprocessed.pkl')
